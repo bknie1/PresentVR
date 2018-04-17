@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/SimpleOfficeInteriors/_Demo/_Demo.unity
+  isLoaded: 1
+  isActive: 1
