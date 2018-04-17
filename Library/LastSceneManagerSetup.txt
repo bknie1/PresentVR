@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SimpleOfficeInteriors/_Demo/_Demo.unity
+- path: Assets/Scenes/01_Presentation.unity
   isLoaded: 1
   isActive: 1
