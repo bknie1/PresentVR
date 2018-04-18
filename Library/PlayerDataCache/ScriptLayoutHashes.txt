@@ -171,6 +171,7 @@ eca6588934e978a74735e6737af683a8 Assembly-CSharp.dll:.GvrReticlePointer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 2a13deadfd379d1bb4ab0ebd2c20ca7e Assembly-CSharp.dll:.GvrLaserVisual
 24f6a3eb1c9b232bcf23fbcef06cdf98 Assembly-CSharp.dll:.GvrControllerVisual
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneInterface
 81dc5af3744a08050494c77f5012051e Assembly-CSharp.dll:.GvrPointerGraphicRaycaster
 5d708ead9a8a3f8af542fec349ed718c Assembly-CSharp.dll:Gvr.Internal.EmulatorConfig
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ProjectionController
