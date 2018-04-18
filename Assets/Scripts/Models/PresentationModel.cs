@@ -22,11 +22,6 @@ public class PresentationModel {
 			// Import images from directory for global use.
 			slides = Resources.LoadAll(presentationDir, typeof(Texture));
 
-			foreach(var s in slides)
-			{
-				Debug.Log(s.name);
-			}
-
 			Debug.Log("PM: " + slides.Length + " slides loaded from Resources.");
 		} catch(MissingReferenceException mre) { Debug.Log (mre.StackTrace); }
 		//--------------------------------------------------------------------------------------

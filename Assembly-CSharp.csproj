@@ -137,6 +137,7 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrVRHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
+     <Compile Include="Assets\Scripts\Controllers\GoogleController.cs" />
      <Compile Include="Assets\Scripts\Controllers\ProjectionController.cs" />
      <Compile Include="Assets\Scripts\Controllers\RotateCameraController.cs" />
      <Compile Include="Assets\Scripts\Models\PresentationModel.cs" />
