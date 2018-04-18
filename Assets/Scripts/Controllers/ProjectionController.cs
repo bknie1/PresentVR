@@ -4,20 +4,22 @@ using UnityEngine;
 using UnityEngine.UI; // For RawImage
 
 public class ProjectionController : MonoBehaviour {
-	private PresentationModel pm; // Loads presentation images, tracks current slide, returns current image.
-	private RawImage projection;
+	private PresentationModel _pm; // Loads presentation images, tracks current slide, returns current image.
+	private RawImage _projection;
+	private string _currentAction;
+	private Texture _currentSlideImage;
 	//------------------------------------------------------------------------------------------
 	// Use this for initialization
 	void Start () 
 	{
-		PresentationModel pm = new PresentationModel (); // Initialize model.
-
-		projection = gameObject.GetComponentInChildren<RawImage> (); // Image display.
+		_currentAction = "";
+		_pm = new PresentationModel (); // Initialize model.
+		_projection = gameObject.GetComponentInChildren<RawImage> (); // Image display.
 		try
 		{
 			Debug.Log("PC: Loading initial slide.");
-			Texture currentSlideImage = (Texture)pm.getCurrentSlide(); // Fetches the first slide.
-			projection.texture = currentSlideImage; // Push slide on to display.
+			_currentSlideImage = (Texture)_pm.getCurrentSlide(); // Fetches the first slide.
+			_projection.texture = _currentSlideImage; // Push slide on to display.
 		}
 		// If, for whatever reason, we're missing both the desired slides and error/placeholder.
 		catch(MissingReferenceException mre)
@@ -27,14 +29,34 @@ public class ProjectionController : MonoBehaviour {
 	}
 	//------------------------------------------------------------------------------------------
 	// Update is called once per frame
+	/// <summary>
+	/// Fetches the most recent input protocol action. See GoogleController for protocol specifics.
+	/// </summary>
 	void Update ()
 	{
-		// TODO: If button pressed -> Get next slide.
-		// TODO: If button pressed and projection selected -> Get previous slide.
+		// Fetch action from GoogleController. We're only interested in left/right swipes.
+		_currentAction = GoogleController.Instance.getAction();
+
+		switch (_currentAction)
+		{
+		case "LEFT_SWIPE":
+			_pm.previousSlide ();
+			loadSlide ();
+			break;
+		case "RIGHT_SWIPE":
+			_pm.nextSlide ();
+			loadSlide ();
+			break;
+		default:
+			// Protocol message not applicable to the projection. Ignore it.
+			break;
+		}
 	}
 	//------------------------------------------------------------------------------------------
-	private void loadSlide()
+	void loadSlide()
 	{
-
+		_currentSlideImage = (Texture)_pm.getCurrentSlide ();
+		_projection.texture = _currentSlideImage; // Push slide on to display.
 	}
+	//------------------------------------------------------------------------------------------
 }
