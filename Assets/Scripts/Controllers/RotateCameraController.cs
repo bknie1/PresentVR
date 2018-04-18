@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class RotateCameraController : MonoBehaviour {
-    private float speed = 5.0f;
-    private float spacing = 0.2f;
+    private float _speed = 5.0f;
+    private float _spacing = 0.2f;
     //------------------------------------------------------------------------------------------
     // Use this for initialization
     // Implements a rotation.
@@ -20,8 +20,8 @@ public class RotateCameraController : MonoBehaviour {
     // Detects camera rotation.
     void Mouse_Input() {
         if (Input.GetMouseButton(1)) {
-            float mouse_x = Input.GetAxis ("Mouse X") * speed;
-            float mouse_y = Input.GetAxis ("Mouse Y") * speed;
+            float mouse_x = Input.GetAxis ("Mouse X") * _speed;
+            float mouse_y = Input.GetAxis ("Mouse Y") * _speed;
             Camera camera = GetComponentInChildren<Camera> ();
             // Camera Gimble
             camera.transform.localRotation = Quaternion.Euler (-mouse_y, 0, 0) * camera.transform.localRotation;
@@ -35,19 +35,19 @@ public class RotateCameraController : MonoBehaviour {
         // Camera position in scene space.
         Vector3 pos = this.transform.position;
         if (Input.GetKey (KeyCode.W)) {
-            pos.z += spacing;
+            pos.z += _spacing;
             Debug.Log ("Moving forward.");
         }
         if (Input.GetKey (KeyCode.A)) {
-            pos.x -= spacing;
+            pos.x -= _spacing;
             Debug.Log ("Turning left.");
         }
         if (Input.GetKey (KeyCode.S)) {
-            pos.z -= spacing;
+            pos.z -= _spacing;
             Debug.Log ("Moving backward.");
         }
         if (Input.GetKey (KeyCode.D)) {
-            pos.x += spacing;
+            pos.x += _spacing;
             Debug.Log ("Turning right.");
         }
         // Update the x/z position at the end of each frame.
