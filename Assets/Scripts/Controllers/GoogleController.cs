@@ -79,7 +79,11 @@ public class GoogleController : MonoBehaviour {
 			{
 				print("Swiped down.");
 			}
-			else if (y < 0 && Mathf.Abs(x) < SwipeThreshold) { print("Swiped up."); } else if (x > 0 && Mathf.Abs(y) < SwipeThreshold)
+			else if (y < 0 && Mathf.Abs(x) < SwipeThreshold) 
+			{
+				print("Swiped up.");
+			}
+			else if (x > 0 && Mathf.Abs(y) < SwipeThreshold)
 			{
 				print("Swiped right.");
 			}
