@@ -140,6 +140,7 @@
      <Compile Include="Assets\Scripts\Controllers\GoogleController.cs" />
      <Compile Include="Assets\Scripts\Controllers\ProjectionController.cs" />
      <Compile Include="Assets\Scripts\Controllers\RotateCameraController.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\SceneInterface.cs" />
      <Compile Include="Assets\Scripts\Models\PresentationModel.cs" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />

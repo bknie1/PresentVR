@@ -6,6 +6,8 @@ public class GoogleController : MonoBehaviour {
 
 	private static GoogleController _instance;
 	private readonly string[] _actions = { "DOWN_SWIPE", "UP_SWIPE", "RIGHT_SWIPE", "LEFT_SWIPE", "APP_BTN_DOWN", "CLICK_BTN_DOWN" };
+
+	// Key Listeners
 	private string _action; // Protocol for ProjectionController. Our last recorded action.
 	private float _SwipeThreshold = 0.5f;
 	private Vector2 _startingPosition; // Tracks our starting position.
